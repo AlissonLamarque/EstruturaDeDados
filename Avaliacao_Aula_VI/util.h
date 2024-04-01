@@ -100,15 +100,11 @@ void exibirValoresIguais(ListaGenerica *lista, int tamanhoListaGenerica){ // EST
         //Rodando lista interna
         for (p = teste->lista; p; p = p->prox) {
             contador = 1;
-            /*
-            //for (p = pGenerica->lista; p; p = p->prox) {
-            O problema está na declaração do FOR porque está comparando lista1 - lista2, lista2 - lista3, lista3 - lista4
-            */
-            pGAux = pGenerica->prox;
-            while (pGAux){
-                for (p2 = pGAux->lista; p2; p2 = p2->prox){
+            pGAux = pGenerica->prox; // Inserindo a próxima lista interna no pGAux
+            while (pGAux){ // Enquanto houver lista interna...
+                for (p2 = pGAux->lista; p2; p2 = p2->prox){ // Rodando os dados da lista interna
                     cout << "Comparando " << p->dado << " com " <<  p2->dado << endl;
-                    if (p->dado == p2->dado){                                         /* Está inserindo após comparar apenas com a próxima lista */
+                    if (p->dado == p2->dado){
                         contador++;
                         cout << "+1 ponto para -> " << p->dado << " - " << p2->dado << endl;
                     }
